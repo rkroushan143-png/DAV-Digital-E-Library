@@ -1,4 +1,30 @@
 "use client";
-import Link from "next/link"; import {BookOpen,Menu,Moon,Sun,X} from "lucide-react"; import {useState} from "react"; import {useApp} from "./Providers"; import {text} from "@/lib/i18n";
-const links=[['/','home'],['/classes','classes'],['/resources','resources'],['/notes','notes'],['/question-papers','papers'],['/videos','videos'],['/about','about'],['/contact','contact']] as const;
-export function Header(){const {locale,setLocale,theme,toggleTheme}=useApp();const [open,setOpen]=useState(false);const t=text[locale];return <header className="sticky top-0 z-50 border-b bg-white/95 backdrop-blur dark:bg-slate-950/95"><div className="mx-auto flex max-w-7xl items-center gap-3 px-4 py-3"><Link href="/" className="flex min-w-0 items-center gap-3" aria-label="Digital E-Library home"><span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-navy text-white"><BookOpen/></span><span className="min-w-0"><b className="block truncate text-sm text-navy dark:text-blue-200 sm:text-base">Dr. Dukhan Ram DAV Public School</b><span className="text-xs muted">Digital E-Library · CBSE</span></span></Link><nav className="ml-auto hidden items-center gap-1 lg:flex" aria-label="Primary">{links.map(([href,key])=><Link className="rounded-lg px-3 py-2 text-sm font-medium hover:bg-blue-50 dark:hover:bg-slate-800" href={href} key={href}>{t[key]}</Link>)}</nav><button className="rounded-lg p-2" onClick={()=>setLocale(locale==='en'?'hi':'en')} aria-label="Switch language">{locale==='en'?'हिं':'EN'}</button><button className="rounded-lg p-2" onClick={toggleTheme} aria-label="Toggle theme">{theme==='light'?<Moon size={20}/>:<Sun size={20}/>}</button><button className="rounded-lg p-2 lg:hidden" onClick={()=>setOpen(!open)} aria-expanded={open} aria-label="Open menu">{open?<X/>:<Menu/>}</button></div>{open&&<nav className="border-t px-4 py-3 lg:hidden" aria-label="Mobile">{links.map(([href,key])=><Link onClick={()=>setOpen(false)} className="block rounded-lg px-3 py-3 font-medium hover:bg-blue-50 dark:hover:bg-slate-800" href={href} key={href}>{t[key]}</Link>)}</nav>}</header>}
+
+import Image from "next/image";
+import Link from "next/link";
+import { Menu, Moon, Sun, X } from "lucide-react";
+import { useState } from "react";
+import { text } from "@/lib/i18n";
+import { useApp } from "./Providers";
+
+const links = [["/", "home"], ["/classes", "classes"], ["/resources", "resources"], ["/notes", "notes"], ["/question-papers", "papers"], ["/videos", "videos"], ["/about", "about"], ["/contact", "contact"]] as const;
+
+export function Header() {
+  const { locale, setLocale, theme, toggleTheme } = useApp();
+  const [open, setOpen] = useState(false);
+  const t = text[locale];
+  const logoSrc = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/images/dav-logo.png`;
+  return <header className="sticky top-0 z-50 border-b bg-white/95 backdrop-blur dark:bg-slate-950/95">
+    <div className="mx-auto flex max-w-7xl items-center gap-3 px-4 py-3">
+      <Link href="/" className="flex min-w-0 items-center gap-3" aria-label="Digital E-Library home">
+        <Image src={logoSrc} alt="DAV College Managing Committee emblem" width={54} height={44} className="h-11 w-auto shrink-0 object-contain" priority />
+        <span className="min-w-0"><b className="block truncate text-sm text-navy dark:text-blue-200 sm:text-base">Dr. Dukhan Ram DAV Public School</b><span className="text-xs muted">Digital E-Library · CBSE</span></span>
+      </Link>
+      <nav className="ml-auto hidden items-center gap-1 lg:flex" aria-label="Primary">{links.map(([href, key]) => <Link className="rounded-lg px-3 py-2 text-sm font-medium hover:bg-blue-50 dark:hover:bg-slate-800" href={href} key={href}>{t[key]}</Link>)}</nav>
+      <button className="rounded-lg p-2" onClick={() => setLocale(locale === "en" ? "hi" : "en")} aria-label="Switch language">{locale === "en" ? "हिं" : "EN"}</button>
+      <button className="rounded-lg p-2" onClick={toggleTheme} aria-label="Toggle theme">{theme === "light" ? <Moon size={20} /> : <Sun size={20} />}</button>
+      <button className="rounded-lg p-2 lg:hidden" onClick={() => setOpen(!open)} aria-expanded={open} aria-label="Open menu">{open ? <X /> : <Menu />}</button>
+    </div>
+    {open && <nav className="border-t px-4 py-3 lg:hidden" aria-label="Mobile">{links.map(([href, key]) => <Link onClick={() => setOpen(false)} className="block rounded-lg px-3 py-3 font-medium hover:bg-blue-50 dark:hover:bg-slate-800" href={href} key={href}>{t[key]}</Link>)}</nav>}
+  </header>;
+}
