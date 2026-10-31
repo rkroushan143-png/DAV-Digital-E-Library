@@ -97,3 +97,30 @@ export const juniorBooks = [
   "Once Upon a Fairy Tale",
   "Inside a Beehive",
 ] as const;
+
+export const bookCategories = [
+  "Animals & Nature",
+  "Early Learning",
+  "Science & Knowledge",
+  "Values & Life Skills",
+  "Family & Celebrations",
+  "Stories & Fiction",
+] as const;
+
+export type BookCategory = (typeof bookCategories)[number];
+
+export function categoryForBook(title: string): BookCategory {
+  const value = title.toLowerCase();
+  if (/animal|donkey|pig|bee|bird|cat|bat|dinosaur|monkey|whale|turtle|pupp|elephant|unicorn|mosquito|snake|fish|dragon/.test(value)) return "Animals & Nature";
+  if (/my first book|phonics|aesop|atlas|5-minute stories|owl diaries/.test(value)) return "Early Learning";
+  if (/body|weather|moon|mushroom|beehive|science|explorer|homes and nests/.test(value)) return "Science & Knowledge";
+  if (/kind|respect|good friend|feelings|health club|changed the world|greatest adventure/.test(value)) return "Values & Life Skills";
+  if (/family|dad|mom|baby|grandad|christmas|valentine|festival|jingle|love you/.test(value)) return "Family & Celebrations";
+  return "Stories & Fiction";
+}
+
+export const cataloguedBooks = juniorBooks.map((title, index) => ({
+  id: index + 1,
+  title,
+  category: categoryForBook(title),
+}));
