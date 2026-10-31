@@ -1,0 +1,1 @@
+import {CategoryPage} from "@/components/CategoryPage";export default function Page(){return <CategoryPage title="Notes · नोट्स" description="Chapter-wise notes added only after school review." type="notes"/>}

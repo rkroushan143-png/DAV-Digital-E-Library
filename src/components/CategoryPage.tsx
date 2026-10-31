@@ -1,0 +1,1 @@
+import {PageHero} from "./PageHero";import {ResourceCatalog} from "./ResourceCatalog";export function CategoryPage({title,description,type}:{title:string;description:string;type?:string}){return <><PageHero title={title} description={description}/><ResourceCatalog initialType={type}/></>}

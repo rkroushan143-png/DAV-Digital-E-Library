@@ -1,0 +1,22 @@
+{
+  "id": "unique-lowercase-id",
+  "titleEn": "Verified English title",
+  "titleHi": "सत्यापित हिंदी शीर्षक",
+  "descriptionEn": "Accurate description",
+  "descriptionHi": "सटीक विवरण",
+  "classLevel": 6,
+  "subject": "science",
+  "resourceType": "notes",
+  "language": "Bilingual",
+  "academicYear": "2026-27",
+  "chapter": "Verified chapter or topic",
+  "sourceName": "Source owner",
+  "sourceUrl": "https://verified.example/resource",
+  "thumbnail": "/images/resource-notes.svg",
+  "tags": ["verified", "topic"],
+  "dateAdded": "2026-01-01",
+  "isOfficial": false,
+  "verifiedAt": "2026-01-01",
+  "downloadAllowed": false,
+  "demo": false
+}

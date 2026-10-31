@@ -1,0 +1,1 @@
+import {CategoryPage} from "@/components/CategoryPage";export default function Page(){return <CategoryPage title="Question papers · प्रश्नपत्र" description="Verified sample and previous-year paper records will appear here." type="question-paper"/>}

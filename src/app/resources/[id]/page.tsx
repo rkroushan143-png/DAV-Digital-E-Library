@@ -1,0 +1,2 @@
+import {notFound} from "next/navigation";import {resources,resourceById} from "@/data/resources";import {ResourceDetailClient} from "@/components/ResourceDetailClient";
+export const generateStaticParams=()=>resources.map(r=>({id:r.id}));export default async function ResourceDetail({params}:{params:Promise<{id:string}>}){const {id}=await params;const r=resourceById(id);if(!r)notFound();return <ResourceDetailClient resource={r}/>}

@@ -1,0 +1,1 @@
+import {CategoryPage} from "@/components/CategoryPage";export default function Page(){return <CategoryPage title="Books · पुस्तकें" description="Official textbook portals and approved reading resources." type="textbook"/>}

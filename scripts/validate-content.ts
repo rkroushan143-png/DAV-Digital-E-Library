@@ -1,0 +1,2 @@
+import {resources} from "../src/data/resources";import {resourceSchema} from "../src/types/library";
+const ids=new Set<string>();for(const item of resources){resourceSchema.parse(item);if(ids.has(item.id))throw new Error(`Duplicate resource id: ${item.id}`);ids.add(item.id);if(!item.sourceUrl.startsWith("https://"))throw new Error(`Non-HTTPS source: ${item.id}`)}console.log(`Validated ${resources.length} resource records.`);

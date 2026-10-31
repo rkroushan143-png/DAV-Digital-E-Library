@@ -1,0 +1,23 @@
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+@import "@fontsource/noto-sans-devanagari/400.css";
+@import "@fontsource/noto-sans-devanagari/700.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; --bg:#fff; --surface:#f3f6fa; --text:#10233f; --muted:#56677d; --border:#dbe4ef; }
+.dark { color-scheme:dark; --bg:#081426; --surface:#10233f; --text:#edf4ff; --muted:#b7c6da; --border:#29415f; }
+html { scroll-behavior:smooth; }
+body { background:var(--bg); color:var(--text); font-family:Inter,"Noto Sans Devanagari",system-ui,sans-serif; }
+* { border-color:var(--border); }
+a,button,input,select { outline-offset:3px; }
+:focus-visible { outline:3px solid #E9B949; }
+.surface { background:var(--surface); }
+.muted { color:var(--muted); }
+.card { @apply rounded-2xl border bg-white p-5 shadow-sm transition; background:color-mix(in srgb,var(--bg) 92%,#fff); }
+.card:hover { transform:translateY(-2px); box-shadow:0 14px 40px rgba(20,59,112,.12); }
+.btn-primary { @apply inline-flex items-center justify-center gap-2 rounded-xl bg-royal px-5 py-3 font-semibold text-white hover:bg-blue-700; }
+.btn-secondary { @apply inline-flex items-center justify-center gap-2 rounded-xl border px-5 py-3 font-semibold hover:bg-blue-50 dark:hover:bg-slate-800; }
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}.card:hover{transform:none}}

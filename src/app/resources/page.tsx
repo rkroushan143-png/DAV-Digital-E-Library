@@ -1,0 +1,1 @@
+import {PageHero} from "@/components/PageHero";import {ResourceCatalog} from "@/components/ResourceCatalog";export default function Resources(){return <><PageHero title="Resource catalog · संसाधन सूची" description="Search and filter official portals, approved learning material and clearly labelled demo records."/><ResourceCatalog/></>}
