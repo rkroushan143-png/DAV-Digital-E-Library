@@ -1,8 +1,6 @@
 @import "@fontsource/inter/400.css";
 @import "@fontsource/inter/600.css";
 @import "@fontsource/inter/700.css";
-@import "@fontsource/noto-sans-devanagari/400.css";
-@import "@fontsource/noto-sans-devanagari/700.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,7 +8,7 @@
 :root { color-scheme: light; --bg:#fff; --surface:#f3f6fa; --text:#10233f; --muted:#56677d; --border:#dbe4ef; }
 .dark { color-scheme:dark; --bg:#081426; --surface:#10233f; --text:#edf4ff; --muted:#b7c6da; --border:#29415f; }
 html { scroll-behavior:smooth; }
-body { background:var(--bg); color:var(--text); font-family:Inter,"Noto Sans Devanagari",system-ui,sans-serif; }
+body { background:var(--bg); color:var(--text); font-family:Inter,Arial,system-ui,sans-serif; }
 * { border-color:var(--border); }
 a,button,input,select { outline-offset:3px; }
 :focus-visible { outline:3px solid #E9B949; }

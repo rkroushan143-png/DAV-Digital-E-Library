@@ -1,9 +1,7 @@
 {
   "id": "unique-lowercase-id",
   "titleEn": "Verified English title",
-  "titleHi": "सत्यापित हिंदी शीर्षक",
   "descriptionEn": "Accurate description",
-  "descriptionHi": "सटीक विवरण",
   "classLevel": 6,
   "subject": "science",
   "resourceType": "notes",

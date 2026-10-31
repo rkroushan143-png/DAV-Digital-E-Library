@@ -6,7 +6,7 @@ A bilingual, accessible, static Next.js e-library for Classes 1–12. It uses lo
 
 ## Features
 
-- English/Hindi UI with locally persisted language preference
+- English-only CBSE-style interface
 - Light/dark mode
 - Class 1–12 and configurable subject navigation
 - Search, filtering and sorting

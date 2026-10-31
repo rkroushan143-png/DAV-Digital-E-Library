@@ -1,1 +1,1 @@
-import {CategoryPage} from "@/components/CategoryPage";export default function Page(){return <CategoryPage title="Worksheets · कार्यपत्रक" description="Printable and digital practice worksheets by class and subject." type="worksheet"/>}
+import {CategoryPage} from "@/components/CategoryPage";export default function Page(){return <CategoryPage title="Worksheets" description="Printable and digital practice worksheets by class and subject." type="worksheet"/>}

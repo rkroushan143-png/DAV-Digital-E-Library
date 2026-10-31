@@ -1,5 +1,0 @@
-export type Locale = "en" | "hi";
-export const text = {
-  en: {home:"Home",classes:"Classes",books:"Books",notes:"Notes",papers:"Question Papers",videos:"Video Lessons",resources:"Resources",about:"About",contact:"Contact",search:"Search learning resources",browse:"Browse Library",explore:"Explore Classes",featured:"Featured official resources",recent:"Recently added",allClasses:"Classes 1–12",noResults:"No approved resources match your filters.",demo:"Demo / unverified",official:"Official source",open:"Open resource"},
-  hi: {home:"मुखपृष्ठ",classes:"कक्षाएँ",books:"पुस्तकें",notes:"नोट्स",papers:"प्रश्नपत्र",videos:"वीडियो पाठ",resources:"संसाधन",about:"परिचय",contact:"संपर्क",search:"शिक्षण सामग्री खोजें",browse:"पुस्तकालय देखें",explore:"कक्षाएँ देखें",featured:"प्रमुख आधिकारिक संसाधन",recent:"हाल में जोड़े गए",allClasses:"कक्षा 1–12",noResults:"आपके फ़िल्टर से मेल खाती स्वीकृत सामग्री उपलब्ध नहीं है।",demo:"डेमो / अप्रमाणित",official:"आधिकारिक स्रोत",open:"संसाधन खोलें"}
-} as const;

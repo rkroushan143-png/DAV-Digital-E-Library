@@ -1,1 +1,1 @@
-import {CategoryPage} from "@/components/CategoryPage";export default function Page(){return <CategoryPage title="Video lessons · वीडियो पाठ" description="Teacher-approved and official video learning portals." type="video"/>}
+import {CategoryPage} from "@/components/CategoryPage";export default function Page(){return <CategoryPage title="Video Lessons" description="Teacher-approved and official video learning portals." type="video"/>}

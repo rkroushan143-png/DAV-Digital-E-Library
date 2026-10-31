@@ -1,8 +1,4 @@
-import type { LibraryResource } from "@/types/library";
-export interface Filters { query:string; classLevel:string; subject:string; language:string; type:string; year:string; sort:string; }
-export const defaultFilters: Filters = {query:"",classLevel:"",subject:"",language:"",type:"",year:"",sort:"date"};
-export function filterResources(items: LibraryResource[], f: Filters) {
-  const q=f.query.trim().toLowerCase();
-  const out=items.filter(r => (!q || [r.titleEn,r.titleHi,r.descriptionEn,r.descriptionHi,r.subject,...r.tags].join(" ").toLowerCase().includes(q)) && (!f.classLevel || String(r.classLevel)===f.classLevel) && (!f.subject || r.subject===f.subject) && (!f.language || r.language===f.language) && (!f.type || r.resourceType===f.type) && (!f.year || r.academicYear===f.year));
-  return [...out].sort((a,b)=> f.sort==="title"?a.titleEn.localeCompare(b.titleEn):f.sort==="class"?a.classLevel-b.classLevel:b.dateAdded.localeCompare(a.dateAdded));
-}
+import type {LibraryResource} from "@/types/library";
+export type Filters={query:string;classLevel:string;subject:string;language:string;type:string;year:string;sort:string};
+export const defaultFilters:Filters={query:"",classLevel:"",subject:"",language:"",type:"",year:"",sort:"date"};
+export function filterResources(items:LibraryResource[],filters:Filters){const query=filters.query.trim().toLowerCase();const output=items.filter(resource=>(!query||[resource.titleEn,resource.descriptionEn,resource.subject,...resource.tags].join(" ").toLowerCase().includes(query))&&(!filters.classLevel||String(resource.classLevel)===filters.classLevel)&&(!filters.subject||resource.subject===filters.subject)&&(!filters.language||resource.language===filters.language)&&(!filters.type||resource.resourceType===filters.type)&&(!filters.year||resource.academicYear===filters.year));return [...output].sort((a,b)=>filters.sort==="title"?a.titleEn.localeCompare(b.titleEn):filters.sort==="class"?a.classLevel-b.classLevel:b.dateAdded.localeCompare(a.dateAdded))}
